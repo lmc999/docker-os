@@ -9,8 +9,7 @@ ARG RELEASE_VERSION="2.5.1"
 # - Install supervisor-stdout to allow output of services started by
 #  supervisord to be easily inspected with "docker logs".
 # ------------------------------------------------------------------------------
-RUN systemctl stop firewalld && systemctl disable firewalld && \
-    yum update && yum install iptables wget curl -y && \
+RUN yum update && yum install iptables wget curl -y && \
     echo 1 > /proc/sys/net/ipv4/ip_forward && \
     echo 1 > /proc/sys/net/ipv4/ip_forward
 
