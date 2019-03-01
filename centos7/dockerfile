@@ -10,7 +10,7 @@ ARG RELEASE_VERSION="2.5.1"
 #  supervisord to be easily inspected with "docker logs".
 # ------------------------------------------------------------------------------
 RUN systemctl stop firewalld && systemctl disable firewalld && \
-    yum update && yum install iptables wget curl openssh-server -y && \
+    yum update && yum install iptables wget curl -y && \
     echo 1 > /proc/sys/net/ipv4/ip_forward && \
     echo 1 > /proc/sys/net/ipv4/ip_forward
 
